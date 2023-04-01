@@ -1,0 +1,300 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Vue3 | 紬紬</title><meta name="author" content="琴吹紬"><meta name="copyright" content="琴吹紬"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="开始简介快速上手 基础创建一个应用模板语法响应式基础计算属性类与样式绑定条件渲染列表渲染事件处理表单输入绑定生命周期侦听器模板引用组件基础 深入组件注册Props事件组件 v-model透传 Attributes插槽依赖注入异步组件 逻辑复用组合式函数自定义指令插件 内置组件TransitionTransitionGroupKeepAliveTeleportSuspense 应用规模化单文件组件工">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue3">
+<meta property="og:url" content="http://example.com/2023/04/01/vue3/index.html">
+<meta property="og:site_name" content="紬紬">
+<meta property="og:description" content="开始简介快速上手 基础创建一个应用模板语法响应式基础计算属性类与样式绑定条件渲染列表渲染事件处理表单输入绑定生命周期侦听器模板引用组件基础 深入组件注册Props事件组件 v-model透传 Attributes插槽依赖注入异步组件 逻辑复用组合式函数自定义指令插件 内置组件TransitionTransitionGroupKeepAliveTeleportSuspense 应用规模化单文件组件工">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://dogefs.s3.ladydaily.com/~/source/wallhaven/full/we/wallhaven-weq9wx.png?w=2560&h=1440&fmt=webp">
+<meta property="article:published_time" content="2023-04-01T06:42:00.000Z">
+<meta property="article:modified_time" content="2023-04-01T11:48:37.183Z">
+<meta property="article:author" content="琴吹紬">
+<meta property="article:tag" content="-标签3">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://dogefs.s3.ladydaily.com/~/source/wallhaven/full/we/wallhaven-weq9wx.png?w=2560&h=1440&fmt=webp"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/04/01/vue3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Vue3',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-01 19:48:37'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://www.fomal.cc/static/css/runtime.min.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tse3-mm.cn.bing.net/th/id/OIP-C.dBK68r3e62R2tHbXhFqabQAAAA?w=241&amp;h=159&amp;c=7&amp;r=0&amp;o=5&amp;pid=1.7" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://dogefs.s3.ladydaily.com/~/source/wallhaven/full/we/wallhaven-weq9wx.png?w=2560&amp;h=1440&amp;fmt=webp')"><nav id="nav"><span id="blog-info"><a href="/" title="紬紬"><span class="site-name">紬紬</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope-open"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Vue3</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-04-01T06:42:00.000Z" title="Created 2023-04-01 14:42:00">2023-04-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-04-01T11:48:37.183Z" title="Updated 2023-04-01 19:48:37">2023-04-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Vue3/">-Vue3</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">2.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>8min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Vue3"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/introduction.html">简介</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/quick-start.html">快速上手</a></p>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/essentials/application.html">创建一个应用</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/essentials/template-syntax.html">模板语法</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/essentials/reactivity-fundamentals.html">响应式基础</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/essentials/computed.html">计算属性</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/essentials/class-and-style.html">类与样式绑定</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/essentials/conditional.html">条件渲染</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/essentials/list.html">列表渲染</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/essentials/event-handling.html">事件处理</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/essentials/forms.html">表单输入绑定</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/essentials/lifecycle.html">生命周期</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/essentials/watchers.html">侦听器</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/essentials/template-refs.html">模板引用</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/essentials/component-basics.html">组件基础</a></p>
+<h2 id="深入组件"><a href="#深入组件" class="headerlink" title="深入组件"></a>深入组件</h2><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/components/registration.html">注册</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/components/props.html">Props</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/components/events.html">事件</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/components/v-model.html">组件 v-model</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/components/attrs.html">透传 Attributes</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/components/slots.html">插槽</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/components/provide-inject.html">依赖注入</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/components/async.html">异步组件</a></p>
+<h2 id="逻辑复用"><a href="#逻辑复用" class="headerlink" title="逻辑复用"></a>逻辑复用</h2><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/reusability/composables.html">组合式函数</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/reusability/custom-directives.html">自定义指令</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/reusability/plugins.html">插件</a></p>
+<h2 id="内置组件"><a href="#内置组件" class="headerlink" title="内置组件"></a>内置组件</h2><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/built-ins/transition.html">Transition</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/built-ins/transition-group.html">TransitionGroup</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/built-ins/keep-alive.html">KeepAlive</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/built-ins/teleport.html">Teleport</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/built-ins/suspense.html">Suspense</a></p>
+<h2 id="应用规模化"><a href="#应用规模化" class="headerlink" title="应用规模化"></a>应用规模化</h2><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/scaling-up/sfc.html">单文件组件</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/scaling-up/tooling.html">工具链</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/scaling-up/routing.html">路由</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/scaling-up/state-management.html">状态管理</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/scaling-up/testing.html">测试</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/scaling-up/ssr.html">服务端渲染 (SSR)</a></p>
+<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/best-practices/production-deployment.html">生产部署</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/best-practices/performance.html">性能优化</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/best-practices/accessibility.html">无障碍访问</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/best-practices/security.html">安全</a></p>
+<h2 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h2><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/typescript/overview.html">总览</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/typescript/composition-api.html">TS 与组合式 API</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/typescript/options-api.html">TS 与选项式 API</a></p>
+<h2 id="进阶主题"><a href="#进阶主题" class="headerlink" title="进阶主题"></a>进阶主题</h2><p>你正在阅读的是 Vue 3 的文档！</p>
+<ul>
+<li>Vue 2 将于 2023 年 12 月 31 日停止维护。详见 <a target="_blank" rel="noopener" href="https://v2.vuejs.org/lts/">Vue 2 延长 LTS</a>。</li>
+<li>Vue 2 中文文档已迁移至 <a target="_blank" rel="noopener" href="https://v2.cn.vuejs.org/">v2.cn.vuejs.org</a>。</li>
+<li>想从 Vue 2 升级？请参考<a target="_blank" rel="noopener" href="https://v3-migration.vuejs.org/">迁移指南</a>。</li>
+</ul>
+<h2 id="什么是-Vue？"><a href="#什么是-Vue？" class="headerlink" title="什么是 Vue？"></a>什么是 Vue？<a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/introduction.html#what-is-vue"></a></h2><p>Vue (发音为 &#x2F;vjuː&#x2F;，类似 <strong>view</strong>) 是一款用于构建用户界面的 JavaScript 框架。它基于标准 HTML、CSS 和 JavaScript 构建，并提供了一套声明式的、组件化的编程模型，帮助你高效地开发用户界面。无论是简单还是复杂的界面，Vue 都可以胜任。</p>
+<p>下面是一个最基本的示例：</p>
+<p>js</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import &#123; createApp &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">createApp(&#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      count: 0</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;).mount(&#x27;#app&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>template</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &lt;button @click=&quot;count++&quot;&gt;</span><br><span class="line">    Count is: &#123;&#123; count &#125;&#125;</span><br><span class="line">  &lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>结果展示</strong></p>
+<p>Count is: 0</p>
+<p>上面的示例展示了 Vue 的两个核心功能：</p>
+<ul>
+<li><strong>声明式渲染</strong>：Vue 基于标准 HTML 拓展了一套模板语法，使得我们可以声明式地描述最终输出的 HTML 和 JavaScript 状态之间的关系。</li>
+<li><strong>响应性</strong>：Vue 会自动跟踪 JavaScript 状态并在其发生变化时响应式地更新 DOM。</li>
+</ul>
+<p>你可能已经有了些疑问——先别急，在后续的文档中我们会详细介绍每一个细节。现在，请继续看下去，以确保你对 Vue 作为一个框架到底提供了什么有一个宏观的了解。</p>
+<p>预备知识</p>
+<p>文档接下来的内容会假设你对 HTML、CSS 和 JavaScript 已经基本熟悉。如果你对前端开发完全陌生，最好不要直接从一个框架开始进行入门学习——最好是掌握了基础知识再回到这里。你可以通过这篇 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/A_re-introduction_to_JavaScript">JavaScript 概述</a>来检验你的 JavaScript 知识水平。如果之前有其他框架的经验会很有帮助，但也不是必须的。</p>
+<h2 id="渐进式框架"><a href="#渐进式框架" class="headerlink" title="渐进式框架"></a>渐进式框架<a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/introduction.html#the-progressive-framework"></a></h2><p>Vue 是一个框架，也是一个生态。其功能覆盖了大部分前端开发常见的需求。但 Web 世界是十分多样化的，不同的开发者在 Web 上构建的东西可能在形式和规模上会有很大的不同。考虑到这一点，Vue 的设计非常注重灵活性和“可以被逐步集成”这个特点。根据你的需求场景，你可以用不同的方式使用 Vue：</p>
+<ul>
+<li>无需构建步骤，渐进式增强静态的 HTML</li>
+<li>在任何页面中作为 Web Components 嵌入</li>
+<li>单页应用 (SPA)</li>
+<li>全栈 &#x2F; 服务端渲染 (SSR)</li>
+<li>Jamstack &#x2F; 静态站点生成 (SSG)</li>
+<li>开发桌面端、移动端、WebGL，甚至是命令行终端中的界面</li>
+</ul>
+<p>如果你是初学者，可能会觉得这些概念有些复杂。别担心！理解教程和指南的内容只需要具备基础的 HTML 和 JavaScript 知识。即使你不是这些方面的专家，也能够跟得上。</p>
+<p>如果你是有经验的开发者，希望了解如何以最合适的方式在项目中引入 Vue，或者是对上述的这些概念感到好奇，我们在<a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/extras/ways-of-using-vue.html">使用 Vue 的多种方式</a>中讨论了有关它们的更多细节。</p>
+<p>无论再怎么灵活，Vue 的核心知识在所有这些用例中都是通用的。即使你现在只是一个初学者，随着你的不断成长，到未来有能力实现更复杂的项目时，这一路上获得的知识依然会适用。如果你已经是一个老手，你可以根据实际场景来选择使用 Vue 的最佳方式，在各种场景下都可以保持同样的开发效率。这就是为什么我们将 Vue 称为“渐进式框架”：它是一个可以与你共同成长、适应你不同需求的框架。</p>
+<h2 id="单文件组件"><a href="#单文件组件" class="headerlink" title="单文件组件"></a>单文件组件<a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/introduction.html#single-file-components"></a></h2><p>在大多数启用了构建工具的 Vue 项目中，我们可以使用一种类似 HTML 格式的文件来书写 Vue 组件，它被称为<strong>单文件组件</strong> (也被称为 <code>*.vue</code> 文件，英文 Single-File Components，缩写为 <strong>SFC</strong>)。顾名思义，Vue 的单文件组件会将一个组件的逻辑 (JavaScript)，模板 (HTML) 和样式 (CSS) 封装在同一个文件里。下面我们将用单文件组件的格式重写上面的计数器示例：</p>
+<p>vue</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      count: 0</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;button @click=&quot;count++&quot;&gt;Count is: &#123;&#123; count &#125;&#125;&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">button &#123;</span><br><span class="line">  font-weight: bold;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>单文件组件是 Vue 的标志性功能。如果你的用例需要进行构建，我们推荐用它来编写 Vue 组件。你可以在后续相关章节里了解更多关于<a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/scaling-up/sfc.html">单文件组件的用法及用途</a>。但你暂时只需要知道 Vue 会帮忙处理所有这些构建工具的配置就好。</p>
+<h2 id="API-风格"><a href="#API-风格" class="headerlink" title="API 风格"></a>API 风格<a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/introduction.html#api-styles"></a></h2><p>Vue 的组件可以按两种不同的风格书写：<strong>选项式 API</strong> 和<strong>组合式 API</strong>。</p>
+<h3 id="选项式-API-Options-API"><a href="#选项式-API-Options-API" class="headerlink" title="选项式 API (Options API)"></a>选项式 API (Options API)<a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/introduction.html#options-api"></a></h3><p>使用选项式 API，我们可以用包含多个选项的对象来描述组件的逻辑，例如 <code>data</code>、<code>methods</code> 和 <code>mounted</code>。选项所定义的属性都会暴露在函数内部的 <code>this</code> 上，它会指向当前的组件实例。</p>
+<p>vue</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  // data() 返回的属性将会成为响应式的状态</span><br><span class="line">  // 并且暴露在 `this` 上</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      count: 0</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  // methods 是一些用来更改状态与触发更新的函数</span><br><span class="line">  // 它们可以在模板中作为事件监听器绑定</span><br><span class="line">  methods: &#123;</span><br><span class="line">    increment() &#123;</span><br><span class="line">      this.count++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  // 生命周期钩子会在组件生命周期的各个不同阶段被调用</span><br><span class="line">  // 例如这个函数就会在组件挂载完成后被调用</span><br><span class="line">  mounted() &#123;</span><br><span class="line">    console.log(`The initial count is $&#123;this.count&#125;.`)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;button @click=&quot;increment&quot;&gt;Count is: &#123;&#123; count &#125;&#125;&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgLy8gcmVhY3RpdmUgc3RhdGVcbiAgZGF0YSgpIHtcbiAgICByZXR1cm4ge1xuICAgICAgY291bnQ6IDBcbiAgICB9XG4gIH0sXG5cbiAgLy8gZnVuY3Rpb25zIHRoYXQgbXV0YXRlIHN0YXRlIGFuZCB0cmlnZ2VyIHVwZGF0ZXNcbiAgbWV0aG9kczoge1xuICAgIGluY3JlbWVudCgpIHtcbiAgICAgIHRoaXMuY291bnQrK1xuICAgIH1cbiAgfSxcblxuICAvLyBsaWZlY3ljbGUgaG9va3NcbiAgbW91bnRlZCgpIHtcbiAgICBjb25zb2xlLmxvZyhgVGhlIGluaXRpYWwgY291bnQgaXMgJHt0aGlzLmNvdW50fS5gKVxuICB9XG59XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8YnV0dG9uIEBjbGljaz1cImluY3JlbWVudFwiPkNvdW50IGlzOiB7eyBjb3VudCB9fTwvYnV0dG9uPlxuPC90ZW1wbGF0ZT4ifQ==">在演练场中尝试一下</a></p>
+<h3 id="组合式-API-Composition-API"><a href="#组合式-API-Composition-API" class="headerlink" title="组合式 API (Composition API)"></a>组合式 API (Composition API)<a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/introduction.html#composition-api"></a></h3><p>通过组合式 API，我们可以使用导入的 API 函数来描述组件逻辑。在单文件组件中，组合式 API 通常会与 <a target="_blank" rel="noopener" href="https://cn.vuejs.org/api/sfc-script-setup.html">&#96;&#96;</a> 搭配使用。这个 <code>setup</code> attribute 是一个标识，告诉 Vue 需要在编译时进行一些处理，让我们可以更简洁地使用组合式 API。比如，<code>&lt;script setup&gt;</code> 中的导入和顶层变量&#x2F;函数都能够在模板中直接使用。</p>
+<p>下面是使用了组合式 API 与 <code>&lt;script setup&gt;</code> 改造后和上面的模板完全一样的组件：</p>
+<p>vue</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref, onMounted &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">// 响应式状态</span><br><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">// 用来修改状态、触发更新的函数</span><br><span class="line">function increment() &#123;</span><br><span class="line">  count.value++</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 生命周期钩子</span><br><span class="line">onMounted(() =&gt; &#123;</span><br><span class="line">  console.log(`The initial count is $&#123;count.value&#125;.`)</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;button @click=&quot;increment&quot;&gt;Count is: &#123;&#123; count &#125;&#125;&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiwgb25Nb3VudGVkIH0gZnJvbSAndnVlJ1xuXG4vLyByZWFjdGl2ZSBzdGF0ZVxuY29uc3QgY291bnQgPSByZWYoMClcblxuLy8gZnVuY3Rpb25zIHRoYXQgbXV0YXRlIHN0YXRlIGFuZCB0cmlnZ2VyIHVwZGF0ZXNcbmZ1bmN0aW9uIGluY3JlbWVudCgpIHtcbiAgY291bnQudmFsdWUrK1xufVxuXG4vLyBsaWZlY3ljbGUgaG9va3Ncbm9uTW91bnRlZCgoKSA9PiB7XG4gIGNvbnNvbGUubG9nKGBUaGUgaW5pdGlhbCBjb3VudCBpcyAke2NvdW50LnZhbHVlfS5gKVxufSlcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIDxidXR0b24gQGNsaWNrPVwiaW5jcmVtZW50XCI+Q291bnQgaXM6IHt7IGNvdW50IH19PC9idXR0b24+XG48L3RlbXBsYXRlPiJ9">在演练场中尝试一下</a></p>
+<h3 id="该选哪一个？"><a href="#该选哪一个？" class="headerlink" title="该选哪一个？"></a>该选哪一个？<a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/introduction.html#which-to-choose"></a></h3><p>两种 API 风格都能够覆盖大部分的应用场景。它们只是同一个底层系统所提供的两套不同的接口。实际上，选项式 API 是在组合式 API 的基础上实现的！关于 Vue 的基础概念和知识在它们之间都是通用的。</p>
+<p>选项式 API 以“组件实例”的概念为中心 (即上述例子中的 <code>this</code>)，对于有面向对象语言背景的用户来说，这通常与基于类的心智模型更为一致。同时，它将响应性相关的细节抽象出来，并强制按照选项来组织代码，从而对初学者而言更为友好。</p>
+<p>组合式 API 的核心思想是直接在函数作用域内定义响应式状态变量，并将从多个函数中得到的状态组合起来处理复杂问题。这种形式更加自由，也需要你对 Vue 的响应式系统有更深的理解才能高效使用。相应的，它的灵活性也使得组织和重用逻辑的模式变得更加强大。</p>
+<p>在<a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/extras/composition-api-faq.html">组合式 API FAQ</a> 章节中，你可以了解更多关于这两种 API 风格的对比以及组合式 API 所带来的潜在收益。</p>
+<p>如果你是使用 Vue 的新手，这里是我们的大致建议：</p>
+<ul>
+<li>在学习的过程中，推荐采用更易于自己理解的风格。再强调一下，大部分的核心概念在这两种风格之间都是通用的。熟悉了一种风格以后，你也能够很快地理解另一种风格。</li>
+<li>在生产项目中：<ul>
+<li>当你不需要使用构建工具，或者打算主要在低复杂度的场景中使用 Vue，例如渐进增强的应用场景，推荐采用选项式 API。</li>
+<li>当你打算用 Vue 构建完整的单页应用，推荐采用组合式 API + 单文件组件。</li>
+</ul>
+</li>
+</ul>
+<p>在学习阶段，你不必只固守一种风格。在接下来的文档中我们会为你提供一系列两种风格的代码供你参考，你可以随时通过左上角的 <strong>API 风格偏好</strong>来做切换。</p>
+<h2 id="还有其他问题？"><a href="#还有其他问题？" class="headerlink" title="还有其他问题？"></a>还有其他问题？<a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/introduction.html#still-got-questions"></a></h2><p>请查看我们的 <a target="_blank" rel="noopener" href="https://cn.vuejs.org/about/faq.html">FAQ</a>。</p>
+<h2 id="选择你的学习路径"><a href="#选择你的学习路径" class="headerlink" title="选择你的学习路径"></a>选择你的学习路径<a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/introduction.html#pick-your-learning-path"></a></h2><p>不同的开发者有不同的学习方式。尽管在可能的情况下，我们推荐你通读所有内容，但你还是可以自由地选择一种自己喜欢的学习路径！</p>
+<p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/tutorial/">尝试互动教程适合喜欢边动手边学的读者。</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/quick-start.html">继续阅读该指南该指南会带你深入了解框架所有方面的细节。</a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/examples/">查看示例浏览核心功能和常见用户界面的示例。</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/vuejs-translations/docs-zh-cn/edit/main/src/guide/introduction.md">在 GitHub 上编辑此页</a></p>
+<p>简介已经加载完毕</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">琴吹紬</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/04/01/vue3/">http://example.com/2023/04/01/vue3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%A0%87%E7%AD%BE3/">-标签3</a></div><div class="post_share"><div class="social-share" data-image="https://dogefs.s3.ladydaily.com/~/source/wallhaven/full/we/wallhaven-weq9wx.png?w=2560&amp;h=1440&amp;fmt=webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/04/01/vue2/" title="Vue2"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://dogefs.s3.ladydaily.com/~/source/wallhaven/full/kx/wallhaven-kx8gmm.png?w=2560&amp;h=1440&amp;fmt=webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Vue2</div></div></a></div><div class="next-post pull-right"><a href="/2023/01/01/React/" title="第二篇文章"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://dogefs.s3.ladydaily.com/~/source/wallhaven/full/gp/wallhaven-gp88dq.jpg?w=2560&amp;h=1440&amp;fmt=webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">第二篇文章</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tse3-mm.cn.bing.net/th/id/OIP-C.dBK68r3e62R2tHbXhFqabQAAAA?w=241&amp;h=159&amp;c=7&amp;r=0&amp;o=5&amp;pid=1.7" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">琴吹紬</div><div class="author-info__description">宁要痛苦,不要麻木</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/shiliuye22"><i class="fab fa-github"></i><span>紬紬</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B"><span class="toc-text">开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-text">基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B1%E5%85%A5%E7%BB%84%E4%BB%B6"><span class="toc-text">深入组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%A4%8D%E7%94%A8"><span class="toc-text">逻辑复用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E7%BD%AE%E7%BB%84%E4%BB%B6"><span class="toc-text">内置组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E8%A7%84%E6%A8%A1%E5%8C%96"><span class="toc-text">应用规模化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="toc-text">最佳实践</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TypeScript"><span class="toc-text">TypeScript</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6%E4%B8%BB%E9%A2%98"><span class="toc-text">进阶主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Vue%EF%BC%9F"><span class="toc-text">什么是 Vue？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%90%E8%BF%9B%E5%BC%8F%E6%A1%86%E6%9E%B6"><span class="toc-text">渐进式框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E6%96%87%E4%BB%B6%E7%BB%84%E4%BB%B6"><span class="toc-text">单文件组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API-%E9%A3%8E%E6%A0%BC"><span class="toc-text">API 风格</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E9%A1%B9%E5%BC%8F-API-Options-API"><span class="toc-text">选项式 API (Options API)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E5%BC%8F-API-Composition-API"><span class="toc-text">组合式 API (Composition API)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A5%E9%80%89%E5%93%AA%E4%B8%80%E4%B8%AA%EF%BC%9F"><span class="toc-text">该选哪一个？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%98%E6%9C%89%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="toc-text">还有其他问题？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E4%BD%A0%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84"><span class="toc-text">选择你的学习路径</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 琴吹紬</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="30" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://dogefs.s3.ladydaily.com/~/source/wallhaven/full/kx/wallhaven-kx9pg7.jpg?w=2560&amp;h=1440&amp;fmt=webp);"> <a class="categoryBar-list-link" href="categories/React/">-React</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">Ubuntu指南</span></li><li class="categoryBar-list-item" style="background:url(https://dogefs.s3.ladydaily.com/~/source/wallhaven/full/p9/wallhaven-p9op59.jpg?w=2560&amp;h=1440&amp;fmt=webp);"> <a class="categoryBar-list-link" href="categories/Git/">-Git</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">玩转Win10</span></li><li class="categoryBar-list-item" style="background:url(https://dogefs.s3.ladydaily.com/~/source/wallhaven/full/x6/wallhaven-x6ewo3.png?w=2560&amp;h=1440&amp;fmt=webp);"> <a class="categoryBar-list-link" href="categories/Pinia/">-Pinia</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">长篇小说连载</span></li><li class="categoryBar-list-item" style="background:url(https://dogefs.s3.ladydaily.com/~/source/wallhaven/small/we/we56z6.jpg?w=400&amp;h=200&amp;fmt=webp);"> <a class="categoryBar-list-link" href="categories/Vue2/">-Vue2</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">个人日记</span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/Ts/">-Ts</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/Vue3/">-Vue3</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v6.2.0" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v4.3.1" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" data-title="本站采用多线部署，主线路托管于Vercel" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://dashboard.4everland.org/" style="margin-inline:5px" data-title="本站采用多线部署，备用线路托管于4EVERLAND" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-4EVERLAND-22DDDD?style=flat&amp;logo=IPFS" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/shiliuye22" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="https://www.fomal.cc/static/js/runtime.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body></html>
