@@ -1,0 +1,33 @@
+/* 页脚与头图透明 */
+#footer {
+    background: transparent !important;
+  }
+  #page-header {
+    background: transparent !important;
+  }
+  
+  /* 白天模式遮罩透明 */
+  #footer::before {
+    background: transparent !important;
+  }
+  #page-header::before {
+    background: transparent !important;
+  }
+  
+  /* 夜间模式遮罩透明 */
+  [data-theme="dark"] #footer::before {
+    background: transparent !important;
+  }
+  [data-theme="dark"] #page-header::before {
+    background: transparent !important;
+  }
+  #body-wrap {
+    /* 背景图像的地址（url括号里）  */
+    background: url(https://dogefs.s3.ladydaily.com/~/source/wallhaven/full/1p/wallhaven-1pqe79.png?w=2560&h=1440&fmt=webp);
+    /* 背景图像不重复 */
+    background-repeat: no-repeat;
+    /* 背景图像大小 */
+    /* background-size: cover; */
+    background-size:100% 100%;
+    background-attachment: fixed;
+  }
